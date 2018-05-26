@@ -1,0 +1,11 @@
+.dot {
+    stroke: #000;
+}
+
+.tooltip {
+    position: absolute;
+    width: 90px;
+    height: 50px;
+    pointer-events: none;
+    background: white;
+}
