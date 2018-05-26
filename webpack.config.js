@@ -5,12 +5,6 @@ module.exports = {
     path: __dirname + "/public",
     filename: "bundle.js"
   },
-
-  devServer: {
-    contentBase: "./",
-    historyApiFallback: true,
-    inline: true
-  },
   resolve: {
     extensions: ['.webpack.js', '.web.js', '.ts', '.js']
   },
