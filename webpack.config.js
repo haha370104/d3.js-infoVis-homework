@@ -7,7 +7,7 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: "./public",
+    contentBase: "./",
     historyApiFallback: true,
     inline: true
   },
