@@ -33,7 +33,7 @@ Entrypoint main = bundle.js bundle.js.map
 python -m SimpleHTTPServer 8000
 ```
 
-完成后，浏览器进入http://localhost:8000/public/index.html即可查看项目（请根据不同httpserver进入相对应的url）
+完成后，浏览器进入 http://localhost:8000/public/index.html 即可查看项目（请根据不同httpserver进入相对应的url）
 
 ## 工具链介绍
 
@@ -54,5 +54,5 @@ python -m SimpleHTTPServer 8000
 
 ## 直接访问
 
-若无node环境或server，可直接访问xxxxxxx进行访问（境外服务器，慢，请谅解）
+若无node环境或server，可直接访问 http://23.83.246.120:8000/public/index.html （境外服务器，慢，请谅解）
 
