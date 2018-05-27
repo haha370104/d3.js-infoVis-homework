@@ -23,7 +23,6 @@ export default class ScatterPlotBuilder {
   private margin: { left: number, right: number, top: number, bottom: number }
 
   private root: Selection<any, any, any, any>
-  private legend: Selection<any, any, any, any>
   private toolTips: Selection<any, any, any, any>
   private dropList: Selection<any, any, any, any>
 
@@ -41,7 +40,7 @@ export default class ScatterPlotBuilder {
       .enter().append('g')
       .attr('class', 'legend')
       .attr('transform', function (d, i) {
-        return 'translate(0,' + i * 20 + ')'
+        return `translate(0,${i * 20})`
       })
 
     legend.append('rect')
@@ -175,8 +174,7 @@ export default class ScatterPlotBuilder {
       this.toolTips.transition()
         .duration(200)
         .style('opacity', .9)
-      this.toolTips.html(d[categoryName] + '<br/> (' + xValue(d)
-        + ', ' + yValue(d) + ')')
+      this.toolTips.html(`${d[categoryName]}<br/>(${xValue(d)}, ${yValue(d)})`)
         .style('left', (d3.event.pageX + 5) + 'px')
         .style('top', (d3.event.pageY - 28) + 'px')
     }).on('mouseout', (d) => {
@@ -184,6 +182,7 @@ export default class ScatterPlotBuilder {
         .duration(500)
         .style('opacity', 0)
     })
+    this.initLegend()
   }
 
   private updatePlot() {
@@ -203,7 +202,6 @@ export default class ScatterPlotBuilder {
     this.height = height
     this.margin = margin
     this.root = this.initRoot()
-    this.legend = this.initLegend()
     this.toolTips = this.initToolTip()
     this.dropList = this.initDropList(axisNames)
     this.initPlot()
