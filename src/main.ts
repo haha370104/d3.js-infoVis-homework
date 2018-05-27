@@ -10,11 +10,9 @@ const yScale = d3.scaleLinear().range([height, 0])
 let xAxisName = 'sepal length'
 let yAxisName = 'sepal width'
 let categoryName = 'species'
-const xAxis = d3.axisBottom(xScale)
-const yAxis = d3.axisLeft(xScale)
 
-const xMap = d => xScale(xValue(d))
-const yMap = d => yScale(yValue(d))
+const xAxis = d3.axisBottom(xScale)
+const yAxis = d3.axisLeft(yScale)
 
 const xValue = (datum) => datum[xAxisName]
 const yValue = (datum) => datum[yAxisName]
@@ -74,8 +72,8 @@ d3.csv('../assets/flowers.csv', null).then((value => {
     .enter().append('circle')
     .attr('class', 'dot')
     .attr('r', 3.5)
-    .attr('cx', xMap)
-    .attr('cy', yMap)
+    .attr('cx', d => xScale(xValue(d)))
+    .attr('cy', d => yScale(yValue(d)))
     .style('fill', function (d) {
       return color(cValue(d))
     })
