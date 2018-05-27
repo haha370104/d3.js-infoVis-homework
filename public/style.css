@@ -26,3 +26,10 @@ body {
     fill: black;
     font-size: 14px;
 }
+
+.drop-list-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
